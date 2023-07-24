@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "totem-overlays",
+	"version": "${version}",
+	"name": "Totem Overlays",
+	"description": "Shows a customizable red overlay on your screen when you aren't holding a totem",
+	"authors": [
+		"TimeSquared"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/totem-overlays/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.github.timesquared.totemoverlays.MainServer"
+		],
+		"client": [
+          "com.github.timesquared.totemoverlays.MainClient"
+		]
+	},
+	"mixins": [
+		"totem-overlays.mixins.json",
+		{
+			"config": "totem-overlays.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.19.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
